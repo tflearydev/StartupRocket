@@ -21,6 +21,40 @@ const InvestorSchema = new Schema({
 })
 
 
+const MemberSchema = new Schema({
+    name: {
+        type: String
+    },
+    position: {
+        type: String
+    },
+    age: {
+        type: Number
+    }
+})
+
+const StartupSchema = new Schema({
+    name: {
+        type: String
+    },
+    email: {
+        type: String
+    },
+    phone: {
+        type: Number
+    },
+    previousFunding: {
+        type: String
+    },
+    website: {
+        type: String
+    },
+    numMembers: {
+        type: Number
+    }
+})
+
+
 
 module.exports = {
     InvestorSchema: InvestorSchema,
