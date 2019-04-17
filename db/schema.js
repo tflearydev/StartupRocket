@@ -11,7 +11,7 @@ const InvestorSchema = new Schema({
         default: "Investor"
     },
     investments: {
-        type: String,
+        type: Number,
         default: "No investment history"
     },
     netWorth: {
