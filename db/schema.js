@@ -41,7 +41,7 @@ const StartupSchema = new Schema({
         type: String
     },
     phone: {
-        type: Number
+        type: String
     },
     previousFunding: {
         type: String
@@ -49,9 +49,7 @@ const StartupSchema = new Schema({
     website: {
         type: String
     },
-    numMembers: {
-        type: Number
-    }
+    members: [MemberSchema]
 })
 
 
