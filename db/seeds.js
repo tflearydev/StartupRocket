@@ -13,16 +13,16 @@ const yang = new Investor({
     netWorth: '5 million'
 })
 const evans = new Investor({
-    image: 'https://images.pond5.com/young-asian-businessman-pulling-out-footage-023141021_prevstill.jpeg',
-    name: 'Aki Yang',
-    investments: 4,
-    netWorth: '5 million'
+    image: 'https://www.ivyexec.com/career-advice/wp-content/uploads/2018/05/characteristics-define-higher-level-professionals.jpg',
+    name: 'Halen',
+    investments: 1,
+    netWorth: '500 thousand'
 })
 const cox = new Investor({
-    image: 'https://images.pond5.com/young-asian-businessman-pulling-out-footage-023141021_prevstill.jpeg',
-    name: 'Aki Yang',
-    investments: 4,
-    netWorth: '5 million'
+    image: 'https://media.licdn.com/dms/image/C5603AQHdsCNAoV3MVg/profile-displayphoto-shrink_200_200/0?e=1559174400&v=beta&t=TO7nT3X5kf1iYojlKCarGiRQ4AcZ3bIRIi7ia8CSycc',
+    name: 'Katelyn',
+    investments: 2,
+    netWorth: '1 million'
 })
 
 

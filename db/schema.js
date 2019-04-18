@@ -12,7 +12,7 @@ const InvestorSchema = new Schema({
     },
     investments: {
         type: Number,
-        default: "No investment history"
+        default: 0
     },
     netWorth: {
         type: String,
