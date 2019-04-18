@@ -1,7 +1,7 @@
 const express = require('express')
 const logger = require('morgan')
 const app = express()
-const startupController = require('./controllers/StartupController.js')
+const startupController = require('./controllers/startupController.js')
 
 app.use(logger('dev'))
 app.use(express.json())
