@@ -12,7 +12,6 @@ import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
 
 
-
 const StyledLink = styled(Link)`
 margin: 0 auto;
 color: black;
