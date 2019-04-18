@@ -8,8 +8,8 @@ import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
 import './App.css'
 import HomePage from './components/HomePage.js'
-import UserPage from './components/UserPage.js'
-import SneakerPage from './components/SneakerPage.js'
+import StartupPage from './components/StartupPage.js'
+import MemberPage from './components/MemberPage.js'
 
 
 
@@ -34,7 +34,7 @@ class App extends Component {
                 height='35'
                 className='d-inline-block align-top'
               />
-              Sneaker Colle¢t
+              StartupRocket
             </Navbar.Brand>
             <Nav className='mr-auto'>
             <Nav.Link>
@@ -58,8 +58,8 @@ class App extends Component {
           
           <Switch>
             <Route exact path='/' component={HomePage} />
-            <Route exact path='/user' component={UserPage} />
-            <Route exact path='/user/:userId' component={SneakerPage} />
+            <Route exact path='/startup' component={StartupPage} />
+            <Route exact path='/startup/:startupId' component={MemberPage} />
           </Switch>
         </div>
       </Router>
