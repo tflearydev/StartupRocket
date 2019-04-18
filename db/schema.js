@@ -20,7 +20,6 @@ const InvestorSchema = new Schema({
     }
 })
 
-
 const MemberSchema = new Schema({
     name: {
         type: String
