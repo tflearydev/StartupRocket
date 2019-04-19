@@ -8,13 +8,11 @@ import HomePage from './components/HomePage.js'
 import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
 
-
 const StyledLink = styled(Link)`
 color: white;
 font-size: 22px;
 font-family: 'Cantarell', sans-serif;
 `;
-
 
 class App extends Component {
   render () {
@@ -30,9 +28,7 @@ class App extends Component {
                 height='40'
                 className='d-inline-block align-top'
               />
-            
              StartupRocket
-             
             </Navbar.Brand>
             <Nav className='mr-auto'>
             <Nav.Link>
