@@ -11,7 +11,8 @@ import MemberPage from './components/MemberPage.js'
 
 const StyledLink = styled(Link)`
 color: white;
-font-size: 20px;
+font-size: 22px;
+font-family: 'Cantarell', sans-serif;
 `;
 
 
@@ -21,7 +22,7 @@ class App extends Component {
       <Router>
         <div className='App'>
           <Navbar expand="lg" bg='dark' variant='dark'>
-            <Navbar.Brand href='/'>
+            <Navbar.Brand class= 'navvy' href='/'>
               <img
                 alt=''
                 src='https://publicdomainvectors.org/photos/Kliponius-Cartoon-rocket-v5.png'
@@ -29,13 +30,15 @@ class App extends Component {
                 height='40'
                 className='d-inline-block align-top'
               />
-             {'StartupRocket'}
+            
+             StartupRocket
+             
             </Navbar.Brand>
             <Nav className='mr-auto'>
             <Nav.Link>
-              <StyledLink to='/' style={{ marginLeft: '240px' }}>Home</StyledLink>
-             <StyledLink to='/startup' style={{ marginLeft: '100px' }}>Startups</StyledLink>
-              <StyledLink to='/investor' style={{ marginLeft: '100px' }}>Investors</StyledLink>
+              <StyledLink to='/' style={{ marginLeft: '243px' }}>Home</StyledLink>
+             <StyledLink to='/startup' style={{ marginLeft: '80px' }}>Startups</StyledLink>
+              <StyledLink to='/investor' style={{ marginLeft: '80px' }}>Investors</StyledLink>
               </Nav.Link>
             </Nav>
           </Navbar>
