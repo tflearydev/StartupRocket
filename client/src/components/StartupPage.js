@@ -18,16 +18,16 @@ const StyledLink = styled(Link)`
 `
 
 class StartupPage extends Component {
-  // creating a method to get all startups
-//   state = {
-//     startups: [],
-//     startup: {
-//       name: '',
-//       email: ''
-//     },
-//     redirectToHome: false,
-//     createdStartup: {}
-//   }
+//   creating a method to get all startups
+  state = {
+    startups: [],
+    startup: {
+      name: '',
+      email: ''
+    },
+    redirectToHome: false,
+    createdStartup: {}
+  }
   componentDidMount = () => {
     this.getAllStartups()
   }

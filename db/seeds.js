@@ -55,3 +55,8 @@ Startup.deleteMany({})
   .then(() => auto.save())
   .then(() => console.log('Saved to MongoDB'))
   .then(() => mongoose.connection.close())
+
+Investor.remove({})
+  .then(() => auto.save())
+  .then(() => Investor.create([yang, evans, cox]))
+  .then(() => mongoose.connection.close())
