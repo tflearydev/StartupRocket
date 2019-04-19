@@ -55,13 +55,3 @@ Startup.deleteMany({})
   .then(() => auto.save())
   .then(() => console.log('Saved to MongoDB'))
   .then(() => mongoose.connection.close())
-
-
-Investor.remove({})
-  .then(() => Investor.create([yang, evans, cox]))
-  .then(() => {
-    console.log("seeded successfully");
-    mongoose.connection.close();
-  })
-  .catch(err => console.log(err, "error!"));
-
