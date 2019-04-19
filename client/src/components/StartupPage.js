@@ -76,7 +76,9 @@ class StartupPage extends Component {
         <Button class='container' href='/new'>
           + Add Startup
         </Button>
-        <br />
+        <br/>
+        <br/>
+        <br/>
 
         {this.state.startups.map(startup => {
           return (
@@ -84,13 +86,22 @@ class StartupPage extends Component {
               <Card>
                   <div class="row review">
                   <div class="col-sm-4">
-                ">
+                  <img class="review-img" src={startup.image} alt='N/A'/>
             </div>
-                <Card.Body>
+            <div class="col-sm-8">
+            <div class="row">
+            <div class="col-sm-6">
+                <Card.Title>
+                    <h4>
                   <StyledLink to={`/startup/${startup._id}`} key={startup._id}>
                     {startup.name}
                   </StyledLink>
-                </Card.Body>
+                  </h4>
+                </Card.Title>
+                {startup.industry}
+                </div>
+                </div>
+                </div>
                 </div>
               </Card>
             </div>

@@ -40,8 +40,8 @@ const jason = new Member({
 
 const mercury = new Startup({
     image: 'https://ph-files.imgix.net/c2e96595-d755-43b2-b2c7-d648a3a10d5b?auto=format&auto=compress&codec=mozjpeg&cs=strip&w=80&h=80&fit=crop',
-    name: 'Mercury',
-    industry: 'banking',
+    name: 'Mercury.Co',
+    industry: 'banking app',
     previousFunding: 'Yes',
     website: 'https://mercury.co/',
     members: [immad, max, jason]
