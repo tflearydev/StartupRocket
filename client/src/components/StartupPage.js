@@ -3,6 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
+import { CardGroup } from 'react-bootstrap';
 import { Card } from 'react-bootstrap'
 
 const StyledLink = styled(Link)`
@@ -15,6 +16,7 @@ const StyledLink = styled(Link)`
   text-align: center;
   display: flex;
   justify-content: center; */
+  text-decoration: none;
 `
 
 class StartupPage extends Component {
@@ -68,55 +70,74 @@ class StartupPage extends Component {
 
     return (
       <div>
+          <br />
+        
+          
         <Button href='/' style={{ marginRight: '820px' }}>
           Back
         </Button>
 
-        <h1>Select or Create Startup</h1>
+        <h1>Startup List</h1>
         <Button class='container' href='/new'>
-          + Add Startup
+          + Add a Startup
         </Button>
-        <br />
-        <br />
-        <br />
+    
+
+        <div
+					className="row"
+					style={{
+						marginLeft: '30px',
+						marginBottom: '30px',
+						marginTop: '50px'
+					}}
+				></div>
 
         {this.state.startups.map(startup => {
           return (
-            <div>
-              <Card style={{ width: '40rem'}}>
+            <div className="row text-center"
+            style={{
+                marginLeft: '20px',
+                marginBottom: '20px',
+                marginTop: '30px'
+            }}
+        >
+              <CardGroup>
+              <Card
+										key={startup._id}
+										className="text-center"
+										style={{
+											width: '16.8rem',
+											marginLeft: '30px',
+											marginRight: '30px',
+											backgroundColor: '#adbfd4'
+										}}
+									>
+                  <Card.Img variant='top' src={startup.image} alt='top' />
+                  <Card.Body>
+                    {/* <div class='col-sm-8'>
+                    <div class='row'>
+                      <div class='col-sm-6'> */}
+                    <Card.Title>
+                      <StyledLink
+                        to={`/startup/${startup._id}`}
+                        key={startup._id}
+                      >
+                        {startup.name}
+                      </StyledLink>
+                    </Card.Title>
 
-                <div class='row review'>
-                  <div class='col-sm-4'>
-                    <Card.Img variant="top" src={startup.image} />
-                  </div>
-                  <div class='col-sm-8'>
-                    <div class='row'>
-                      <div class='col-sm-6'>
-                        <Card.Title>
-                          <h4>
-                            <StyledLink
-                              to={`/startup/${startup._id}`}
-                              key={startup._id}
-                            >
-                              {startup.name}
-                            </StyledLink>
-                          </h4>
-                        </Card.Title>
-                        {startup.industry}
-                      </div>
-                      <div class='col-sm-6' />
-                    </div>
-                    <div class='row'>
-                      <div class='col review-quote'>
-                        {startup.previousFunding}
-                      </div>
-                      <div class='row'>
-                       {startup.website}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Card>
+                    <Card.Title>Industry: {startup.industry}</Card.Title>
+
+                    <Card.Title>
+                      Previous Funding: {startup.previousFunding}
+                    </Card.Title>
+
+                    <Card.Title>
+                      Site: <a href={startup.website}>https://mercury.co/</a>
+                    </Card.Title>
+                  </Card.Body>
+                </Card>
+              </CardGroup>
             </div>
           )
         })}
