@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import { Card } from 'react-bootstrap'
 
 const StyledLink = styled(Link)`
-  margin: 0 auto;
+  /* margin: 0 auto;
   background: silver;
   border: 2px solid black;
   border-radius: 8px;
@@ -14,7 +14,7 @@ const StyledLink = styled(Link)`
   height: 30px;
   text-align: center;
   display: flex;
-  justify-content: center;
+  justify-content: center; */
 `
 
 class StartupPage extends Component {
@@ -23,7 +23,11 @@ class StartupPage extends Component {
     startups: [],
     startup: {
       name: '',
-      email: ''
+      email: '',
+      phone: '',
+      previousFunding: '',
+      website: '',
+      members: '',
     },
     redirectToHome: false,
     createdStartup: {}
@@ -39,23 +43,23 @@ class StartupPage extends Component {
   }
   // created a method to get all startups
 
-  createStartup = () => {
-    axios.post('/api/startups', { startup: this.state.startup }).then(res => {
-      console.log(res.data)
-      this.setState({ redirectToHome: true, createdStartup: res.data })
-    })
-  }
+//   createStartup = () => {
+//     axios.post('/api/startups', { startup: this.state.startup }).then(res => {
+//       console.log(res.data)
+//       this.setState({ redirectToHome: true, createdStartup: res.data })
+//     })
+//   }
 
-  handleChange = e => {
-    const newStartup = { ...this.state.startup }
-    newStartup[e.target.name] = e.target.value
-    this.setState({ startup: newStartup })
-  }
+//   handleChange = e => {
+//     const newStartup = { ...this.state.startup }
+//     newStartup[e.target.name] = e.target.value
+//     this.setState({ startup: newStartup })
+//   }
 
-  handleSignUp = e => {
-    e.preventDefault()
-    this.createStartup()
-  }
+//   handleSignUp = e => {
+//     e.preventDefault()
+//     this.createStartup()
+//   }
 
   render () {
     if (this.state.redirectToHome === true) {
@@ -78,11 +82,16 @@ class StartupPage extends Component {
           return (
             <div>
               <Card>
+                  <div class="row review">
+                  <div class="col-sm-4">
+                ">
+            </div>
                 <Card.Body>
                   <StyledLink to={`/startup/${startup._id}`} key={startup._id}>
                     {startup.name}
                   </StyledLink>
                 </Card.Body>
+                </div>
               </Card>
             </div>
           )

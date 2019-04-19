@@ -10,13 +10,13 @@ const InvestorSchema = new Schema({
         type: String,
         default: "Investor"
     },
-    investments: {
-        type: Number,
-        default: 0
-    },
     netWorth: {
         type: String,
         default: "Not available"
+    },
+    email: {
+        type: String,
+        default: "Email Here"
     }
 })
 
@@ -26,20 +26,17 @@ const MemberSchema = new Schema({
     },
     position: {
         type: String
-    },
-    age: {
-        type: Number
     }
 })
 
 const StartupSchema = new Schema({
+    image: {
+        type: String
+    },
     name: {
         type: String
     },
-    email: {
-        type: String
-    },
-    phone: {
+    industry: {
         type: String
     },
     previousFunding: {
