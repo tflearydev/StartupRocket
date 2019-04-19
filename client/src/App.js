@@ -8,16 +8,19 @@ import HomePage from './components/HomePage.js'
 import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
 
+
 const StyledLink = styled(Link)`
 color: white;
 font-size: 20px;
 `;
+
+
 class App extends Component {
   render () {
     return (
       <Router>
         <div className='App'>
-          <Navbar bg='dark' variant='dark'>
+          <Navbar expand="lg" bg='dark' variant='dark'>
             <Navbar.Brand href='/'>
               <img
                 alt=''
@@ -31,8 +34,8 @@ class App extends Component {
             <Nav className='mr-auto'>
             <Nav.Link>
               <StyledLink to='/' style={{ marginLeft: '240px' }}>Home</StyledLink>
-             <StyledLink to='/startup' style={{ marginLeft: '110px' }}>Startups</StyledLink>
-              <StyledLink to='/investor' style={{ marginLeft: '110px' }}>Investors</StyledLink>
+             <StyledLink to='/startup' style={{ marginLeft: '100px' }}>Startups</StyledLink>
+              <StyledLink to='/investor' style={{ marginLeft: '100px' }}>Investors</StyledLink>
               </Nav.Link>
             </Nav>
           </Navbar>
