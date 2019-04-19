@@ -18,7 +18,7 @@ const StyledLink = styled(Link)`
 `
 
 class StartupPage extends Component {
-//   creating a method to get all startups
+  //   creating a method to get all startups
   state = {
     startups: [],
     startup: {
@@ -27,7 +27,7 @@ class StartupPage extends Component {
       phone: '',
       previousFunding: '',
       website: '',
-      members: '',
+      members: ''
     },
     redirectToHome: false,
     createdStartup: {}
@@ -43,23 +43,23 @@ class StartupPage extends Component {
   }
   // created a method to get all startups
 
-//   createStartup = () => {
-//     axios.post('/api/startups', { startup: this.state.startup }).then(res => {
-//       console.log(res.data)
-//       this.setState({ redirectToHome: true, createdStartup: res.data })
-//     })
-//   }
+  //   createStartup = () => {
+  //     axios.post('/api/startups', { startup: this.state.startup }).then(res => {
+  //       console.log(res.data)
+  //       this.setState({ redirectToHome: true, createdStartup: res.data })
+  //     })
+  //   }
 
-//   handleChange = e => {
-//     const newStartup = { ...this.state.startup }
-//     newStartup[e.target.name] = e.target.value
-//     this.setState({ startup: newStartup })
-//   }
+  //   handleChange = e => {
+  //     const newStartup = { ...this.state.startup }
+  //     newStartup[e.target.name] = e.target.value
+  //     this.setState({ startup: newStartup })
+  //   }
 
-//   handleSignUp = e => {
-//     e.preventDefault()
-//     this.createStartup()
-//   }
+  //   handleSignUp = e => {
+  //     e.preventDefault()
+  //     this.createStartup()
+  //   }
 
   render () {
     if (this.state.redirectToHome === true) {
@@ -76,32 +76,45 @@ class StartupPage extends Component {
         <Button class='container' href='/new'>
           + Add Startup
         </Button>
-        <br/>
-        <br/>
-        <br/>
+        <br />
+        <br />
+        <br />
 
         {this.state.startups.map(startup => {
           return (
             <div>
-              <Card>
-                  <div class="row review">
-                  <div class="col-sm-4">
-                  <img class="review-img" src={startup.image} alt='N/A'/>
-            </div>
-            <div class="col-sm-8">
-            <div class="row">
-            <div class="col-sm-6">
-                <Card.Title>
-                    <h4>
-                  <StyledLink to={`/startup/${startup._id}`} key={startup._id}>
-                    {startup.name}
-                  </StyledLink>
-                  </h4>
-                </Card.Title>
-                {startup.industry}
-                </div>
-                </div>
-                </div>
+              <Card style={{ width: '40rem'}}>
+
+                <div class='row review'>
+                  <div class='col-sm-4'>
+                    <Card.Img variant="top" src={startup.image} />
+                  </div>
+                  <div class='col-sm-8'>
+                    <div class='row'>
+                      <div class='col-sm-6'>
+                        <Card.Title>
+                          <h4>
+                            <StyledLink
+                              to={`/startup/${startup._id}`}
+                              key={startup._id}
+                            >
+                              {startup.name}
+                            </StyledLink>
+                          </h4>
+                        </Card.Title>
+                        {startup.industry}
+                      </div>
+                      <div class='col-sm-6' />
+                    </div>
+                    <div class='row'>
+                      <div class='col review-quote'>
+                        {startup.previousFunding}
+                      </div>
+                      <div class='row'>
+                       {startup.website}
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </Card>
             </div>
