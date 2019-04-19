@@ -126,5 +126,4 @@ class StartupPage extends Component {
     )
   }
 }
-
 export default StartupPage
