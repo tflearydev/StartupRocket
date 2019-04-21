@@ -38,25 +38,34 @@ class StartupPage extends Component {
     this.getAllStartups()
   }
 
+
   getAllStartups = () => {
     axios.get('/api/startups').then(res => {
       this.setState({ startups: res.data })
     })
   }
+
+//   createStartup = () => {
+//     axios.post(`/api/startups/`).then(res => {
+//       const newStartups = [...this.states.startups]
+//       newStartups.unshift(res.data) 
+//       this.setState({ newStartups })
+//     })
+//   }
   // created a method to get all startups
 
-  //   createStartup = () => {
-  //     axios.post('/api/startups', { startup: this.state.startup }).then(res => {
-  //       console.log(res.data)
-  //       this.setState({ redirectToHome: true, createdStartup: res.data })
-  //     })
-  //   }
+    createStartup = () => {
+      axios.post('/api/startups', { startup: this.state.startup }).then(res => {
+        console.log(res.data)
+        this.setState({ redirectToHome: true, createdStartup: res.data })
+      })
+    }
 
-  //   handleChange = e => {
-  //     const newStartup = { ...this.state.startup }
-  //     newStartup[e.target.name] = e.target.value
-  //     this.setState({ startup: newStartup })
-  //   }
+    handleChange = e => {
+      const newStartup = { ...this.state.startup }
+      newStartup[e.target.name] = e.target.value
+      this.setState({ startup: newStartup })
+    }
 
   //   handleSignUp = e => {
   //     e.preventDefault()
@@ -78,19 +87,17 @@ class StartupPage extends Component {
         </Button>
 
         <h1>Startup List</h1>
-        <Button class='container' href='/new'>
+        <Button class='container' href='/startup'>
           + Add a Startup
         </Button>
-    
-
-        <div
+        {/* <div
 					className="row"
 					style={{
 						marginLeft: '30px',
 						marginBottom: '30px',
-						marginTop: '50px'
+						marginTop: '20px'
 					}}
-				></div>
+				></div> */}
 
         {this.state.startups.map(startup => {
           return (
@@ -117,6 +124,7 @@ class StartupPage extends Component {
                     {/* <div class='col-sm-8'>
                     <div class='row'>
                       <div class='col-sm-6'> */}
+                    
                     <Card.Title>
                       <StyledLink
                         to={`/startup/${startup._id}`}
@@ -131,10 +139,12 @@ class StartupPage extends Component {
                     <Card.Title>
                       Previous Funding: {startup.previousFunding}
                     </Card.Title>
+                    
 
                     <Card.Title>
                       Site: <a href={startup.website}>https://mercury.co/</a>
                     </Card.Title>
+                    
                   </Card.Body>
                 </Card>
               </CardGroup>
