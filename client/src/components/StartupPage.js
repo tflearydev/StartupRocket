@@ -87,7 +87,7 @@ class StartupPage extends Component {
         </Button>
 
         <h1>Startup List</h1>
-        <Button class='container' href='/startup'>
+        <Button class='container' href='/startup/new'>
           + Add a Startup
         </Button>
         {/* <div
