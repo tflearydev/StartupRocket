@@ -14,22 +14,25 @@ ____
 ## Wireframes :
 ____
 
-<img src='pics/D1430D79-AE8E-456D-8E2E-1D31A42D3EF0.jpeg' alt='home' height=450 width=450/>
+<img src='pics/pic1.jpeg' alt='home' height=450 width=450/>
 
+<img src='pics/pic2.jpeg' alt='home' height=450 width=450/>
 
-<img src='pics/FD3AFAAE-DBB7-456F-9D89-BDBFE805E0D6.jpeg' alt='home' height=450 width=450/>
+<img src='pics/pic2.jpeg' alt='home' height=450 width=450/>
+
+<img src='pics/pic4.jpeg' alt='home' height=450 width=450/>
 
 
 ## ERD :
 ___
 
-<img src='pics/11A11132-2C9F-4726-895D-8C01083D1B13.jpeg' alt='home' height=450 width=450/>
+<img src='pics/pic5.jpeg' alt='home' height=450 width=450/>
 
 ## Live Deployed Project Link & Trello Board(User Stories)
 ___
-[Heroku](https://sneaker-collect.herokuapp.com/)
+[Heroku](https://startup-rocket.herokuapp.com/)
 
-[Trello](https://trello.com/b/fZjruLsL/sneaker-collector)
+[Trello](https://trello.com/b/pfS9qd7v/startuprocket)
 
 
 ## Features
