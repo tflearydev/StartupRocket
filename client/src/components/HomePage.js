@@ -51,7 +51,6 @@ const Jumbotron = styled.div`
   background-image: url('https://www.cloudways.com/wp-content/uploads/2018/04/startup-head-bnr.png');
   height: 500px;
 `
-
 class HomePage extends Component {
   render () {
     return (   
