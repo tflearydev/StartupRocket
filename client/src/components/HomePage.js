@@ -45,7 +45,7 @@ background-color: #004A7F;
   50% { background-color: #0000FF; box-shadow: 0 0 40px #0000FF; }
   100% { background-color: #0000FF; box-shadow: 0 0 3px #0000FF; }
 
-`;
+`
 
 const Jumbotron = styled.div`
   background-image: url('https://www.cloudways.com/wp-content/uploads/2018/04/startup-head-bnr.png');
@@ -53,22 +53,20 @@ const Jumbotron = styled.div`
 `
 class HomePage extends Component {
   render () {
-    return (   
+    return (
       <Jumbotron>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <StyledLink to='/startup'>Startup Rocket</StyledLink>
-
       </Jumbotron>
-    
     )
   }
-};
+}
 
 export default HomePage

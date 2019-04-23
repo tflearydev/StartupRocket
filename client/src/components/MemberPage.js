@@ -9,15 +9,15 @@ const Wrapper = styled.div`
   margin: 0 auto;
 `
 const StyledLink = styled(Link)`
-margin: 0 auto;
-background: blue;
-border: 2px solid blue;
-border-radius: 10px;
-color: white;
-font-size: 20px;
-height: 20px;
-width: 70px;
-`;
+  margin: 0 auto;
+  background: blue;
+  border: 2px solid blue;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  height: 20px;
+  width: 70px;
+`
 
 const Card = styled.div`
   display: flex;
@@ -41,16 +41,16 @@ const FlexRowCentered = styled(FlexContainerCentered)`
 `
 
 const DeleteButton = styled.button`
-height: 40px;
-margin: 0 auto;
-margin-top: 20px;
-margin-right: 800px;
-width: 150px;
-border-radius: 10px;
-background: red;
-border: yellow 1px solid;
-font-weight: bold;
-color: white;
+  height: 40px;
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-right: 800px;
+  width: 150px;
+  border-radius: 10px;
+  background: red;
+  border: yellow 1px solid;
+  font-weight: bold;
+  color: white;
 `
 
 class MemberPage extends Component {
@@ -63,15 +63,17 @@ class MemberPage extends Component {
 
   componentDidMount = () => {
     if (this.props.match.params) {
-      axios.get(`/api/startups/${this.props.match.params.startupId}`).then(res => {
-        this.setState({
-          members: res.data.members,
-          startup: {
-            _id: res.data._id,
-            name: res.data.name
-          }
+      axios
+        .get(`/api/startups/${this.props.match.params.startupId}`)
+        .then(res => {
+          this.setState({
+            members: res.data.members,
+            startup: {
+              _id: res.data._id,
+              name: res.data.name
+            }
+          })
         })
-      })
     }
   }
 
@@ -79,7 +81,7 @@ class MemberPage extends Component {
     const startupId = this.props.match.params.startupId
     axios.post(`/api/startups/${startupId}/members`).then(res => {
       const newMembers = [...this.state.members]
-      newMembers.unshift(res.data) 
+      newMembers.unshift(res.data)
       this.setState({ members: newMembers })
     })
   }
@@ -93,19 +95,17 @@ class MemberPage extends Component {
     })
   }
 
-  deleteStartup=()=>{
-    const startupId=this.props.match.params.startupId
-    axios.delete(`/api/startups/${startupId}`)
-    .then(()=>{
+  deleteStartup = () => {
+    const startupId = this.props.match.params.startupId
+    axios.delete(`/api/startups/${startupId}`).then(() => {
       this.props.history.goBack()
     })
   }
-  //Add funcionality to delete a startup
-
+  // Add funcionality to delete a startup
 
   handleChange = (member, event) => {
     console.log('HANDLE CHANGE')
-    
+
     const newMembers = [...this.state.members]
 
     const members = newMembers.map(savedMember => {
@@ -114,7 +114,7 @@ class MemberPage extends Component {
       }
       return savedMember
     })
-    this.setState({members: members})
+    this.setState({ members: members })
   }
 
   updateMember = (member, e) => {
@@ -130,15 +130,18 @@ class MemberPage extends Component {
     return (
       <div>
         <Wrapper>
-            
-        <StyledLink to='/startup' style={{ marginRight: '820px' }}>
+          <StyledLink to='/startup' style={{ marginRight: '820px' }}>
             Back
-          </StyledLink> 
-          <DeleteButton onClick={()=>this.deleteStartup(this.state.startup.startupId)}>Delete Startup</DeleteButton>
- 
-          <br/>
-          <br/>
-          
+          </StyledLink>
+          <DeleteButton
+            onClick={() => this.deleteStartup(this.state.startup.startupId)}
+          >
+            Delete Startup
+          </DeleteButton>
+
+          <br />
+          <br />
+
           <h1>Startup Members</h1>
           {/* <Button onClick={this.createMember}>New Member</Button> */}
           <button onClick={this.createMember}>+ Add Member</button>
@@ -147,15 +150,13 @@ class MemberPage extends Component {
             {this.state.members.map(member => {
               return (
                 <Card>
-                  
-                    <Member
-                      key={member._id}
-                      member={member}
-                      deleteMember={this.deleteMember}
-                      handleChange={this.handleChange}
-                      updateMember={this.updateMember}
-                    />
-                  
+                  <Member
+                    key={member._id}
+                    member={member}
+                    deleteMember={this.deleteMember}
+                    handleChange={this.handleChange}
+                    updateMember={this.updateMember}
+                  />
                 </Card>
               )
             })}

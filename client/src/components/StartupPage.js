@@ -3,7 +3,7 @@ import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import { Button } from 'react-bootstrap'
 import styled from 'styled-components'
-import { CardGroup } from 'react-bootstrap';
+import { CardGroup } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 
 const StyledLink = styled(Link)`
@@ -19,8 +19,8 @@ class StartupPage extends Component {
       name: '',
       industry: '',
       previousFunding: '',
-      website: '',
-    },
+      website: ''
+    }
   }
   componentDidMount = () => {
     this.getAllStartups()
@@ -32,23 +32,23 @@ class StartupPage extends Component {
     })
   }
 
-    createStartup = () => {
-      axios.post('/api/startups', { startup: this.state.startup }).then(res => {
-        console.log(res.data)
-        this.setState({ redirectToHome: true, createdStartup: res.data })
-      })
-    }
+  createStartup = () => {
+    axios.post('/api/startups', { startup: this.state.startup }).then(res => {
+      console.log(res.data)
+      this.setState({ redirectToHome: true, createdStartup: res.data })
+    })
+  }
 
-    handleChange = e => {
-      const newStartup = { ...this.state.startup }
-      newStartup[e.target.name] = e.target.value
-      this.setState({ startup: newStartup })
-    }
+  handleChange = e => {
+    const newStartup = { ...this.state.startup }
+    newStartup[e.target.name] = e.target.value
+    this.setState({ startup: newStartup })
+  }
 
-    handleSignUp = e => {
-      e.preventDefault()
-      this.createStartup()
-    }
+  handleSignUp = e => {
+    e.preventDefault()
+    this.createStartup()
+  }
 
   render () {
     if (this.state.redirectToHome === true) {
@@ -57,9 +57,8 @@ class StartupPage extends Component {
 
     return (
       <div>
-          <br />
-        
-          
+        <br />
+
         <Button href='/' style={{ marginRight: '820px' }}>
           Back
         </Button>
@@ -68,32 +67,33 @@ class StartupPage extends Component {
 
         {this.state.startups.map(startup => {
           return (
-            <div className="row text-center"
-            style={{
+            <div
+              className='row text-center'
+              style={{
                 marginLeft: '5px',
                 marginRight: '0px',
                 marginBottom: '20px',
                 marginTop: '30px'
-            }}
-        >
+              }}
+            >
               <CardGroup>
-              <Card
-										key={startup._id}
-										className="text-center"
-										style={{
-											width: '16.8rem',
-											marginLeft: '10px',
-											marginRight: '30px',
-                      backgroundColor: '#adbfd4',
-                      display: 'inline-block'
-										}}
-									>
+                <Card
+                  key={startup._id}
+                  className='text-center'
+                  style={{
+                    width: '16.8rem',
+                    marginLeft: '10px',
+                    marginRight: '30px',
+                    backgroundColor: '#adbfd4',
+                    display: 'inline-block'
+                  }}
+                >
                   <Card.Img variant='top' src={startup.image} alt='top' />
                   <Card.Body>
                     {/* <div class='col-sm-8'>
                     <div class='row'>
                       <div class='col-sm-6'> */}
-                    
+
                     <Card.Title>
                       <StyledLink
                         to={`/startup/${startup._id}`}
@@ -108,28 +108,26 @@ class StartupPage extends Component {
                     <Card.Title>
                       Previous Funding: {startup.previousFunding}
                     </Card.Title>
-                    
+
                     <Card.Title>
                       <StyledLink
-                      to={`/startup/${startup._id}`}
-                      key={startup._id}
+                        to={`/startup/${startup._id}`}
+                        key={startup._id}
                       >
-                      {startup.website}
+                        {startup.website}
                       </StyledLink>
                     </Card.Title>
-                    
                   </Card.Body>
                 </Card>
               </CardGroup>
-              </div>
-        
+            </div>
           )
         })}
         <br />
         <br />
-        
+
         <form onSubmit={this.handleSignUp}>
-        <div>
+          <div>
             <label htmlFor='image'>image</label>
             <input
               type='imgLink'
@@ -174,9 +172,8 @@ class StartupPage extends Component {
               value={this.state.startup.website}
             />
           </div>
-          
+
           <button>+ Create Startup</button>
-          
         </form>
       </div>
     )
