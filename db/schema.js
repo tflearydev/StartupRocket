@@ -8,24 +8,26 @@ const InvestorSchema = new Schema({
     },
     name: {
         type: String,
-        default: "Investor"
+        default: "Investor Name"
     },
     netWorth: {
         type: String,
-        default: "Not available"
+        default: "Net Worth"
     },
     email: {
         type: String,
-        default: "Email Here"
+        default: "Email"
     }
 })
 
 const MemberSchema = new Schema({
     name: {
-        type: String
+        type: String,
+        default: "Name"
     },
     position: {
-        type: String
+        type: String,
+        default: "Role"
     }
 })
 
@@ -40,11 +42,11 @@ const StartupSchema = new Schema({
     },
     industry: {
         type: String,
-        default: 'industry?'
+        default: 'Industry?'
     },
     previousFunding: {
         type: String,
-        default: 'N/A'
+        default: 'Previous Funding?'
     },
     website: {
         type: String,
