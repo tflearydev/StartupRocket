@@ -55,11 +55,8 @@ const StartupSchema = new Schema({
     members: [MemberSchema]
 })
 
-
-
 module.exports = {
     InvestorSchema: InvestorSchema,
     MemberSchema: MemberSchema,
     StartupSchema: StartupSchema
   }
-
