@@ -91,7 +91,7 @@ function Investor (props) {
       <a href={props.member.value}>Buy or Sell</a> */}
     
 
-      <DeleteButton onClick={() => props.deleteInvestor(props.Investor)}>
+      <DeleteButton onClick={() => props.deleteInvestor(props.investor)}>
         Delete Investor
       </DeleteButton>
       </InvestorWrapper>

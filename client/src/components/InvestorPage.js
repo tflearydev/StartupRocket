@@ -134,7 +134,7 @@ componentDidMount = () => {
 
 createInvestor = () => {
     // const investorId = this.props.match.params.investorId
-    axios.post('/api/investors/investors', { user: this.state.investor }).then(res => {
+    axios.post('/api/investors/investors/', { investor: this.state.investor }).then(res => {
         const newInvestors = [...this.state.investors]
         newInvestors.unshift(res.data)
         this.setState({ investors: newInvestors })
@@ -146,9 +146,20 @@ createInvestor = () => {
 
   deleteInvestor = investor => {
     const investorId = investor._id
+    console.log(investorId)
     axios.delete(`/api/investors/investors/${investorId}`)
-    .then(res => {
-      this.setState({ investors: res.data })
+    .then(()=>{
+        if (this.props.match.params) {
+            axios.get('/api/investors/investors').then(res => {
+              this.setState({
+              investors: res.data,
+                investor: {
+                  _id: res.data._id,
+                  name: res.data.name
+                }
+              })
+            })
+          }
     })
   }
 
@@ -169,11 +180,26 @@ createInvestor = () => {
 
 
   updateInvestor = (investor, e) => {
-    const investorId = this.props.match.params.investorId
+    const investorId = investor._id
+    console.log(investorId)
     axios
-      .patch(`/api/investors/investors/${investorId}`, { investor })
-      .then(res => {
-        this.setState({ investors: res.data.investors })
+      .patch(`/api/investors/investors/${investorId}`, investor )
+      .then(() => {
+       
+
+        if (this.props.match.params) {
+            axios.get('/api/investors/investors').then(res => {
+              this.setState({
+              investors: res.data,
+                investor: {
+                  _id: res.data._id,
+                  name: res.data.name
+                }
+              })
+            })
+          }
+
+
       })
   }
 // deleteInvestor = investor => {
