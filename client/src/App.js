@@ -7,6 +7,7 @@ import './App.css'
 import HomePage from './components/HomePage.js'
 import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
+import InvestorPage from './components/InvestorPage.js'
 
 const StyledLink = styled(Link)`
 color: white;
@@ -42,6 +43,7 @@ class App extends Component {
             <Route exact path='/' component={HomePage} />
             <Route exact path='/startup' component={StartupPage} />
             <Route exact path='/startup/:startupId' component={MemberPage} />
+            <Route exact path='/investor/' component={InvestorPage} />
           </Switch>
         </div>
       </Router>

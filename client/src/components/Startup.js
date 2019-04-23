@@ -58,48 +58,48 @@ function Startup (props) {
     <image
     type='string'
     name='image'
-    onChange={e => props.handleChange(props.startup, e)}
-    onMouseOut={e => props.updateStartup(props.startup, e)}
+    // onChange={e => props.handleChange(props.startup, e)}
+    // onMouseOut={e => props.updateStartup(props.startup, e)}
     value={props.startup.image}
     />
 
       <input
         type='text'
         name='name'
-        onChange={e => props.handleChange(props.startup, e)}
-        onMouseOut={e => props.updateStartup(props.startup, e)}
+        // onChange={e => props.handleChange(props.startup, e)}
+        // onMouseOut={e => props.updateStartup(props.startup, e)}
         value={props.startup.name}
       />
 
       <textarea 
         name=''
         rows='1'
-        onChange={e => props.handleChange(props.startup, e)}
-        onMouseOut={e => props.updateStartup(props.startup, e)}
+        // onChange={e => props.handleChange(props.startup, e)}
+        // onMouseOut={e => props.updateStartup(props.startup, e)}
         value={props.startup.position}
       />
 
 <textarea 
         name=''
         rows='1'
-        onChange={e => props.handleChange(props.startup, e)}
-        onMouseOut={e => props.updateStartup(props.startup, e)}
+        // onChange={e => props.handleChange(props.startup, e)}
+        // onMouseOut={e => props.updateStartup(props.startup, e)}
         value={props.startup.industry}
       />
 
 <textarea 
         name=''
         rows='1'
-        onChange={e => props.handleChange(props.startup, e)}
-        onMouseOut={e => props.updateStartup(props.startup, e)}
+        // onChange={e => props.handleChange(props.startup, e)}
+        // onMouseOut={e => props.updateStartup(props.startup, e)}
         value={props.startup.previosFunding}
       />
 
 <textarea 
         name=''
         rows='1'
-        onChange={e => props.handleChange(props.startup, e)}
-        onMouseOut={e => props.updateStartup(props.startup, e)}
+        // onChange={e => props.handleChange(props.startup, e)}
+        // onMouseOut={e => props.updateStartup(props.startup, e)}
         value={props.startup.website}
       />
 

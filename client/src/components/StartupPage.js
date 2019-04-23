@@ -24,15 +24,14 @@ class StartupPage extends Component {
   state = {
     startups: [],
     startup: {
+      image: '',
       name: '',
-      email: '',
-      phone: '',
+      industry: '',
       previousFunding: '',
       website: '',
-      members: ''
     },
-    redirectToHome: false,
-    createdStartup: {}
+  //   redirectToHome: false,
+  //   createdStartup: {}
   }
   componentDidMount = () => {
     this.getAllStartups()
@@ -45,13 +44,13 @@ class StartupPage extends Component {
     })
   }
 
-//   createStartup = () => {
-//     axios.post(`/api/startups/`).then(res => {
-//       const newStartups = [...this.states.startups]
-//       newStartups.unshift(res.data) 
-//       this.setState({ newStartups })
-//     })
-//   }
+  // createStartup = () => {
+  //   axios.post(`/api/startups/`).then(res => {
+  //     const newStartups = [...this.states.startups]
+  //     newStartups.unshift(res.data) 
+  //     this.setState({ newStartups })
+  //   })
+  // }
   // created a method to get all startups
 
     createStartup = () => {
@@ -67,10 +66,10 @@ class StartupPage extends Component {
       this.setState({ startup: newStartup })
     }
 
-  //   handleSignUp = e => {
-  //     e.preventDefault()
-  //     this.createStartup()
-  //   }
+    handleSignUp = e => {
+      e.preventDefault()
+      this.createStartup()
+    }
 
   render () {
     if (this.state.redirectToHome === true) {
@@ -87,9 +86,9 @@ class StartupPage extends Component {
         </Button>
 
         <h1>Startup List</h1>
-        <Button class='container' href='/startup/new'>
+        {/* <Button class='container' href='/startup/new'>
           + Add a Startup
-        </Button>
+        </Button> */}
         {/* <div
 					className="row"
 					style={{
@@ -103,20 +102,25 @@ class StartupPage extends Component {
           return (
             <div className="row text-center"
             style={{
-                marginLeft: '20px',
+                marginLeft: '5px',
+                marginRight: '0px',
                 marginBottom: '20px',
                 marginTop: '30px'
             }}
         >
+         {/* <div class='col-sm-5'>
+                    <div class='row'>
+                      <div class='col-sm-5'> */}
               <CardGroup>
               <Card
 										key={startup._id}
 										className="text-center"
 										style={{
 											width: '16.8rem',
-											marginLeft: '30px',
+											marginLeft: '10px',
 											marginRight: '30px',
-											backgroundColor: '#adbfd4'
+                      backgroundColor: '#adbfd4',
+                      display: 'inline-block'
 										}}
 									>
                   <Card.Img variant='top' src={startup.image} alt='top' />
@@ -142,17 +146,76 @@ class StartupPage extends Component {
                     
 
                     <Card.Title>
-                      Site: <a href={startup.website}>https://mercury.co/</a>
+                      <StyledLink
+                      to={`/startup/${startup._id}`}
+                      key={startup._id}
+                      >
+                      {startup.website}
+                      </StyledLink>
                     </Card.Title>
                     
                   </Card.Body>
                 </Card>
               </CardGroup>
-            </div>
+              </div>
+            //   </div>
+            //   </div>
+            // </div>
           )
         })}
         <br />
         <br />
+        
+        <form onSubmit={this.handleSignUp}>
+        <div>
+            <label htmlFor='image'>image</label>
+            <input
+              type='imgLink'
+              name='image'
+              onChange={this.handleChange}
+              value={this.state.startup.image}
+            />
+          </div>
+          <div>
+            <label htmlFor='name'>name</label>
+            <input
+              type='text'
+              name='name'
+              onChange={this.handleChange}
+              value={this.state.startup.name}
+            />
+          </div>
+          <div>
+            <label htmlFor='industry'>industry</label>
+            <input
+              type='text'
+              name='industry'
+              onChange={this.handleChange}
+              value={this.state.startup.industry}
+            />
+          </div>
+          <div>
+            <label htmlFor='previousFunding'>previousFunding</label>
+            <input
+              type='text'
+              name='previousFunding'
+              onChange={this.handleChange}
+              value={this.state.startup.previousFunding}
+            />
+          </div>
+          <div>
+            <label htmlFor='website'>website</label>
+            <input
+              type='text'
+              name='website'
+              onChange={this.handleChange}
+              value={this.state.startup.website}
+            />
+          </div>
+          
+          <button>+ Create Startup</button>
+          
+        </form>
       </div>
     )
   }

@@ -1,13 +1,14 @@
 const express = require('express')
 const logger = require('morgan')
 const app = express()
-const startupController = require('./controllers/startupController.js')
+const startupController = require('./controllers/startupController')
 
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.static(__dirname + '/client/build/'))
 
 app.use('/api/startups/', startupController)
+app.use('/api/investors/', startupController)
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/client/build/index.html')

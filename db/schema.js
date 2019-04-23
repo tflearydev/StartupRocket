@@ -31,19 +31,24 @@ const MemberSchema = new Schema({
 
 const StartupSchema = new Schema({
     image: {
-        type: String
+        type: String,
+        default: "https://s3.amazonaws.com/pas-wordpress-media/content/uploads/2014/08/startup-1024x1024.jpg",
     },
     name: {
-        type: String
+        type: String,
+        default: 'Startup Name'
     },
     industry: {
-        type: String
+        type: String,
+        default: 'industry?'
     },
     previousFunding: {
-        type: String
+        type: String,
+        default: 'N/A'
     },
     website: {
-        type: String
+        type: String,
+        default: 'https://en.wikipedia.org/wiki/Startup_company',
     },
     members: [MemberSchema]
 })
