@@ -151,6 +151,31 @@ createInvestor = () => {
       this.props.history.goBack()
     })
   }
+
+
+  handleChange = (investor, event) => {
+    console.log('HANDLE CHANGE')
+    
+    const newInvestors = [...this.state.investors]
+
+    const investors = newInvestors.map(savedInvestor => {
+      if (savedInvestor._id === investor._id) {
+        savedInvestor[event.target.name] = event.target.value
+      }
+      return savedInvestor
+    })
+    this.setState({investors: investors})
+  }
+
+  
+  updateInvestor = (investor, e) => {
+    // const investorId = this.props.match.params.investorId
+    axios
+      .patch(`/api/investors/investors`, { investor })
+      .then(res => {
+        this.setState({ investors: res.data.investors })
+      })
+  }
 // deleteInvestor = investor => {
 //     // const startupId = this.props.match.params.startupId
 //     const investorId = investor._id
@@ -180,28 +205,7 @@ createInvestor = () => {
     //   e.preventDefault()
     //   this.createStartup()
     // }
-    handleChange = (investor, event) => {
-        console.log('HANDLE CHANGE')
-        
-        const newInvestors = [...this.state.investors]
-    
-        const investors = newInvestors.map(savedInvestor => {
-          if (savedInvestor._id === investor._id) {
-            savedInvestor[event.target.name] = event.target.value
-          }
-          return savedInvestor
-        })
-        this.setState({investors: investors})
-      }
-    
-      updateInvestor = (investor, e) => {
-        // const investorId = this.props.match.params.investorId
-        axios
-          .patch(`/api/investors/investors`, { investor })
-          .then(res => {
-            this.setState({ investors: res.data.investors })
-          })
-      }
+
 
   render () {
     // if (this.state.redirectToHome === true) {
