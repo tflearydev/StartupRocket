@@ -147,8 +147,8 @@ createInvestor = () => {
   deleteInvestor = investor => {
     const investorId = investor._id
     axios.delete(`/api/investors/investors/${investorId}`)
-    .then(() => {
-      this.props.history.goBack()
+    .then(res => {
+      this.setState({ investors: res.data })
     })
   }
 
@@ -167,11 +167,11 @@ createInvestor = () => {
     this.setState({investors: investors})
   }
 
-  
+
   updateInvestor = (investor, e) => {
-    // const investorId = this.props.match.params.investorId
+    const investorId = this.props.match.params.investorId
     axios
-      .patch(`/api/investors/investors`, { investor })
+      .patch(`/api/investors/investors/${investorId}`, { investor })
       .then(res => {
         this.setState({ investors: res.data.investors })
       })
