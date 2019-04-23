@@ -178,7 +178,6 @@ createInvestor = () => {
     this.setState({investors: investors})
   }
 
-
   updateInvestor = (investor, e) => {
     const investorId = investor._id
     console.log(investorId)
