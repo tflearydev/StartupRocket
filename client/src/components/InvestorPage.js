@@ -134,23 +134,30 @@ componentDidMount = () => {
 
 createInvestor = () => {
     // const investorId = this.props.match.params.investorId
-    axios.post('/api/investors', { user: this.state.user }).then(res => {
-      const newInvestors = [...this.state.investors]
-      newInvestors.unshift(res.data)
-      this.setState({ investors: newInvestors })
-    })
-  }
+    axios.post('/api/investors/investors', { user: this.state.investor }).then(res => {
+        const newInvestors = [...this.state.investors]
+        newInvestors.unshift(res.data)
+        this.setState({ investors: newInvestors })
+      })
+    }
   //this will add a new investor to the beginning of the array
 
 
 
   deleteInvestor = investor => {
     const investorId = investor._id
-    axios.delete(`/api/investors/${investorId}`)
+    axios.delete(`/api/investors/investors/${investorId}`)
     .then(() => {
       this.props.history.goBack()
     })
   }
+// deleteInvestor = investor => {
+//     // const startupId = this.props.match.params.startupId
+//     const investorId = investor._id
+//     axios.delete(`/api/investors/investor/${investorId}`).then(res => {
+//       this.setState({ investors: res.data })
+//     })
+//   }
 // this will allow an investor to be deleted
 
 
@@ -188,9 +195,9 @@ createInvestor = () => {
       }
     
       updateInvestor = (investor, e) => {
-        const investorId = this.props.match.params.investorId
+        // const investorId = this.props.match.params.investorId
         axios
-          .patch(`/api/investors/${investorId}`, { investor })
+          .patch(`/api/investors/investors`, { investor })
           .then(res => {
             this.setState({ investors: res.data.investors })
           })

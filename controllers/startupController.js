@@ -1,7 +1,7 @@
 const express = require('express')
 const Startup = require('../models/Startup.js')
 const Member = require('../models/Member.js')
-const Investor = require('../models/Investor.js')
+// const Investor = require('../models/Investor.js')
 const router = express.Router()
 
 router.get('/', (req, res) => {
@@ -23,13 +23,13 @@ router.get('/', (req, res) => {
   })
 //////
 
-  router.get('/investors/', (req, res) => {
-    Investor.find()
-        .then(investors => {
-          res.json(investors)
-        })
-        .catch(err => console.log(err))
-    })
+  // router.get('/investors/', (req, res) => {
+  //   Investor.find()
+  //       .then(investors => {
+  //         res.json(investors)
+  //       })
+  //       .catch(err => console.log(err))
+  //   })
 
     // router.delete('/investors/:investorId', (req, res) => {
     //   Investor.findByIdAndRemove(req.params.investorId).then(investor => {
@@ -48,15 +48,15 @@ router.get('/', (req, res) => {
     //   })
     //     })
 
-        router.post('/investors', (req, res) => {
-          const newInvestor = new Investor(req.body.investor)
-          newInvestor
-            .save()
-            .then((investor) => {
-              res.json(investor)
-            })
-            .catch((err) => console.log(err))
-        })
+        // router.post('/investors', (req, res) => {
+        //   const newInvestor = new Investor(req.body.investor)
+        //   newInvestor
+        //     .save()
+        //     .then((investor) => {
+        //       res.json(investor)
+        //     })
+        //     .catch((err) => console.log(err))
+        // })
 
 //   router.delete('/investors/:investorId/investors/:investorId', (req, res) => {
 //   Investor.findById(req.params.investorId).then(investor => {
@@ -72,42 +72,43 @@ router.get('/', (req, res) => {
 //     })
 //   })
 // })
-router.delete('/investors/:investorId', (req, res) => {
-  Investor.findById(req.params.investorId).then(investor => {
-    const filteredInvestors = investors.filter(
-      investor => investor._id.toString() !== req.params.investorId
-    )
+// router.delete('/investors/:investorId', (req, res) => {
+//   Investor.findById(req.params.investorId).then(investor => {
+//     const filteredInvestors = investors.filter(
+//       investor => investor._id.toString() !== req.params.investorId
+//     )
 
-    investors = filteredInvestors
+//     investors = filteredInvestors
 
-    investor.save().then(investor => {
-      investors = investors.reverse()
-      res.json(investor)
-    })
-  })
-})
+//     investor.save().then(investor => {
+//       investors = investors.reverse()
+//       res.json(investor)
+//     })
+//   })
+// })
 
-router.patch('/investor/investor/:investorId', (req, res) => {
-  Investor.findById(req.params.investorId).then(investor => {
-    const update = req.body.investor
-    // const investor = investors.id(req.params.investorId)
-    if (update.name) {
-      investor.name = update.name
-    }
-    if (update.netWorth) {
-      investor.netWorth = update.netWorth
-    }
-    if (update.email) {
-      investor.email = update.email
-    }
+// router.patch('/investor/investor/:investorId', (req, res) => {
+//   Investor.findById(req.params.investorId).then(investor => {
+//     const update = req.body.investor
+//     // const investor = investors.id(req.params.investorId)
+//     if (update.name) {
+//       investor.name = update.name
+//     }
+//     if (update.netWorth) {
+//       investor.netWorth = update.netWorth
+//     }
+//     if (update.email) {
+//       investor.email = update.email
+//     }
     
 
-    investor.save().then(investor => {
-      investors = investors.reverse()
-      res.json(investor)
-    })
-  })
-})
+//     investor.save().then(investor => {
+//       investors = investors.reverse()
+//       res.json(investor)
+//     })
+//   })
+// })
+
 
 
 
@@ -172,9 +173,6 @@ router.get('/:startupId', (req, res) => {
   })
   
 /////////////
-
-
-
 
 // router.delete('/investors/:investorId', (req, res) => {
 //   Investor.findById(req.params.investorId).then(investor => {
