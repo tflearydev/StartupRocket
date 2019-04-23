@@ -135,11 +135,10 @@ class MemberPage extends Component {
             Back
           </StyledLink> 
           <DeleteButton onClick={()=>this.deleteStartup(this.state.startup.startupId)}>Delete Startup</DeleteButton>
-            
+ 
           <br/>
           <br/>
           
-
           <h1>Startup Members</h1>
           {/* <Button onClick={this.createMember}>New Member</Button> */}
           <button onClick={this.createMember}>+ Add Member</button>

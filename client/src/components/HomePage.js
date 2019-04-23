@@ -54,7 +54,6 @@ const Jumbotron = styled.div`
 class HomePage extends Component {
   render () {
     return (   
-      /* refactor here and give it a height */
       <Jumbotron>
           <br/>
           <br/>

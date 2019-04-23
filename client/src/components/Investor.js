@@ -1,18 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { Link } from 'react-router-dom'
 
 const InvestorWrapper = styled.div`
     display: flex;
     flex-direction: column;
 
-    /* input, textarea,  {
-        padding: 10px;
-        margin-bottom: 5px;
-        font-size: 1.05em;
-        background-color: transparent;
-        border: none;
-    } */
     input {
         padding: 10px;
         margin-bottom: 5px;
@@ -85,12 +77,7 @@ function Investor (props) {
         onMouseOut={e => props.updateInvestor(props.investor, e)}
         value={props.investor.email}
       />
-
-      {/* <img src={props.member.image} alt='https://unixtitan.net/images/converse-clipart-shoe-jordan-3.png'/>
-      
-      <a href={props.member.value}>Buy or Sell</a> */}
     
-
       <DeleteButton onClick={() => props.deleteInvestor(props.investor)}>
         Delete Investor
       </DeleteButton>

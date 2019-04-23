@@ -3,11 +3,6 @@ import axios from 'axios'
 import Investor from './Investor.js'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-// import { Redirect } from 'react-router-dom'
-// import { Button } from 'react-bootstrap'
-// import { Link } from 'react-router-dom'
-// import { CardGroup } from 'react-bootstrap'
-// import { Card } from 'react-bootstrap'
 
 const Wrapper = styled.div`
   width: 80%;

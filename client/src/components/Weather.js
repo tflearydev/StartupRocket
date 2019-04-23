@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+
 
 const Weather = props =>
   <div className='weather'>
-     {/* <p>City: </p>
-    <p>{props.location}</p>  */}
-
+  
     <div>City: 
     <p>{props.city}</p>
     </div>
