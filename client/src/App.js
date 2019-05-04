@@ -14,6 +14,7 @@ import MemberPage from './components/MemberPage.js'
 import InvestorPage from './components/InvestorPage.js'
 import Weather from '../src/components/Weather'
 import InputField from '../src/components/InputField'
+// import logo from './logo.png'
 
 const StyledLink = styled(Link)`
   color: white;
@@ -63,8 +64,8 @@ class App extends Component {
           <Navbar expand='lg' bg='dark' variant='dark'>
             <Navbar.Brand class='navvy' href='/'>
               <img
-                alt=''
-                src='https://publicdomainvectors.org/photos/Kliponius-Cartoon-rocket-v5.png'
+                src= "https://publicdomainvectors.org/photos/Kliponius-Cartoon-rocket-v5.png"
+                alt= ''
                 width='50'
                 height='40'
                 className='d-inline-block align-top'
@@ -125,4 +126,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;
