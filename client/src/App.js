@@ -55,7 +55,7 @@ class App extends Component {
       this.getWeather(cityName)
     }
   }
-  
+
   render () {
     return (
       <Router>
