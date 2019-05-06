@@ -65,7 +65,7 @@ class App extends Component {
             <Navbar.Brand class='navvy' href='/'>
               <img
                 src= "https://publicdomainvectors.org/photos/Kliponius-Cartoon-rocket-v5.png"
-                alt= ''
+                alt= 'https://cdn-images-1.medium.com/max/1600/1*7QzITNnpHIBot7-wpo0iJA.png'
                 width='50'
                 height='40'
                 className='d-inline-block align-top'
