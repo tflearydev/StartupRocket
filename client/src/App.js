@@ -1,10 +1,13 @@
+// ALL CODE COMMENTS ARE FOR AN API THAT I WOULD LIKE
+// TO DISABLE AT THIS CURRENT MOMENT 
+
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
-import axios from 'axios'
+// import axios from 'axios'
 import { Nav } from 'react-bootstrap'
-import { Dropdown } from 'react-bootstrap'
-import { ButtonToolbar } from 'react-bootstrap'
-import { DropdownButton } from 'react-bootstrap'
+// import { Dropdown } from 'react-bootstrap'
+// import { ButtonToolbar } from 'react-bootstrap'
+// import { DropdownButton } from 'react-bootstrap'
 import { Navbar } from 'react-bootstrap'
 import styled from 'styled-components'
 import './App.css'
@@ -12,9 +15,10 @@ import HomePage from './components/HomePage.js'
 import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
 import InvestorPage from './components/InvestorPage.js'
-import Weather from '../src/components/Weather'
-import InputField from '../src/components/InputField'
+// import Weather from '../src/components/Weather'
+// import InputField from '../src/components/InputField'
 // import logo from './logo.png'
+
 
 const StyledLink = styled(Link)`
   color: white;
@@ -32,30 +36,30 @@ class App extends Component {
     }
   }
 
-  getWeather = query => {
-    axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/find?q=${query}&units=imperial&appid=f92cfed3df0f7d5444b04a2ce82f11ab`
-      )
-      .then(response => {
-        this.setState({
-          weather: response.data.list[0],
-          temp: response.data.list[0].main.temp,
-          clouds: response.data.list[0].weather[0].description
-        })
-      })
-      .catch(error => {
-        console.log('Error', error)
-      })
-  }
+  // getWeather = query => {
+  //   axios
+  //     .get(
+  //       `https://api.openweathermap.org/data/2.5/find?q=${query}&units=imperial&appid=f92cfed3df0f7d5444b04a2ce82f11ab`
+  //     )
+  //     .then(response => {
+  //       this.setState({
+  //         weather: response.data.list[0],
+  //         temp: response.data.list[0].main.temp,
+  //         clouds: response.data.list[0].weather[0].description
+  //       })
+  //     })
+  //     .catch(error => {
+  //       console.log('Error', error)
+  //     })
+  // }
 
-  queryWeather = (event, cityName) => {
-    if (event.key === 'Enter') {
-      event.preventDefault()
-      cityName = event.target.value
-      this.getWeather(cityName)
-    }
-  }
+  // queryWeather = (event, cityName) => {
+  //   if (event.key === 'Enter') {
+  //     event.preventDefault()
+  //     cityName = event.target.value
+  //     this.getWeather(cityName)
+  //   }
+  // }
 
   render () {
     return (
@@ -74,7 +78,7 @@ class App extends Component {
             </Navbar.Brand>
             <Nav className='mr-auto'>
               <Nav.Link>
-                <StyledLink to='/' style={{ marginLeft: '243px' }}>
+                <StyledLink to='/' style={{ marginLeft: '500px' }}>
                   Home
                 </StyledLink>
                 <StyledLink to='/startup' style={{ marginLeft: '80px' }}>
@@ -85,7 +89,7 @@ class App extends Component {
                 </StyledLink>
               </Nav.Link>
             </Nav>
-            <InputField queryWeather={this.queryWeather} />
+            {/* <InputField queryWeather={this.queryWeather} />
             <ButtonToolbar style={{ marginRight: '20px' }}>
               {['left'].map(direction => (
                 <DropdownButton
@@ -112,7 +116,7 @@ class App extends Component {
                   </Dropdown.Item>
                 </DropdownButton>
               ))}
-            </ButtonToolbar>
+            </ButtonToolbar> */}
           </Navbar>
           <Switch>
             <Route exact path='/' component={HomePage} />
