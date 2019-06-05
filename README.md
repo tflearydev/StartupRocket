@@ -11,6 +11,14 @@ ____
 * Bootstrap, Styled-Components, CSS, Google Fonts (Styling) - Frontend Styling
 * axios - Api calls
 
+
+## Live Deployed Project Link & Trello Board(User Stories)
+___
+[Heroku](https://startup-rocket.herokuapp.com/)
+
+[Trello](https://trello.com/b/pfS9qd7v/startuprocket)
+
+
 ## Wireframes :
 ____
 
@@ -27,12 +35,6 @@ ____
 ___
 
 <img src='pics/pic5.jpeg' alt='home' height=450 width=450/>
-
-## Live Deployed Project Link & Trello Board(User Stories)
-___
-[Heroku](https://startup-rocket.herokuapp.com/)
-
-[Trello](https://trello.com/b/pfS9qd7v/startuprocket)
 
 
 ## Features
