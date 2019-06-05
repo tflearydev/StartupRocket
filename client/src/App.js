@@ -15,6 +15,7 @@ import HomePage from './components/HomePage.js'
 import StartupPage from './components/StartupPage.js'
 import MemberPage from './components/MemberPage.js'
 import InvestorPage from './components/InvestorPage.js'
+import logo from './logo.png'
 // import Weather from '../src/components/Weather'
 // import InputField from '../src/components/InputField'
 // import logo from './logo.png'
@@ -68,8 +69,8 @@ class App extends Component {
           <Navbar expand='lg' bg='dark' variant='dark'>
             <Navbar.Brand class='navvy' href='/'>
               <img
-                src= "https://publicdomainvectors.org/photos/Kliponius-Cartoon-rocket-v5.png"
-                alt= 'https://cdn-images-1.medium.com/max/1600/1*7QzITNnpHIBot7-wpo0iJA.png'
+                src= {logo}
+                alt= ''
                 width='50'
                 height='40'
                 className='d-inline-block align-top'

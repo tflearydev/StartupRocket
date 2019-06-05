@@ -27,29 +27,25 @@ background-color: #004A7F;
   50% { background-color: #0000FF; -webkit-box-shadow: 0 0 40px #0000FF; }
   100% { background-color: #0000FF; -webkit-box-shadow: 0 0 3px #0000FF; }
 }
-
 @-moz-keyframes glowing {
   0% { background-color: #0000FF; -moz-box-shadow: 0 0 3px #0000FF; }
   50% { background-color: #0000FF; -moz-box-shadow: 0 0 40px #0000FF; }
   100% { background-color: #0000FF; -moz-box-shadow: 0 0 3px #0000FF; }
 }
-
 @-o-keyframes glowing {
   0% { background-color: #0000FF; box-shadow: 0 0 3px #0000FF; }
   50% { background-color: #0000FF; box-shadow: 0 0 40px #0000FF; }
   100% { background-color: #0000FF; box-shadow: 0 0 3px #0000FF; }
 }
-
 @keyframes glowing {
   0% { background-color: #0000FF; box-shadow: 0 0 3px #0000FF; }
   50% { background-color: #0000FF; box-shadow: 0 0 40px #0000FF; }
   100% { background-color: #0000FF; box-shadow: 0 0 3px #0000FF; }
-
 `
 
 const Jumbotron = styled.div`
   background-image: url('https://www.cloudways.com/wp-content/uploads/2018/04/startup-head-bnr.png');
-  height: 500px;
+  height: 600px;
 `
 class HomePage extends Component {
   render () {
