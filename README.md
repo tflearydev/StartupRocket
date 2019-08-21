@@ -12,7 +12,7 @@ ____
 * axios - Api calls
 
 
-## Live Deployed Project Link & Trello Board(User Stories)
+## Live Deployed Project Link & User Stories
 ___
 [Heroku](https://startup-rocket.herokuapp.com/)
 
