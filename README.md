@@ -22,7 +22,7 @@ ___
 ## Wireframes :
 ____
 
-<img src='pics/pic1.jpeg' alt='home' height=450 width=450/>
+<img src='pics/startup.png' alt='home' height=450 width=450/>
 
 <img src='pics/Pic2.jpeg' alt='home' height=450 width=450/>
 
