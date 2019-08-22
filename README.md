@@ -1,6 +1,6 @@
 # StartupRocket 
 
-Application for startups that don't have access to funding, and for investors looking for startups to invest in. 
+Here is a quick pplication that allows startups that dont have normal access to funding, to connect with investors who are looking to invest in these type of companies. Simple build where you can create startup profiles, add members, and create investors profiles. React Component based application with some advanced onmouseout forms, and bootstrap and react styled components styling for example. 
 
 
 ## Technologies Used:
@@ -36,6 +36,19 @@ ____
 ___
 
 <img src='pics/erd.png' alt='home' height=450 width=450/>
+
+
+## Quick Site Glance :
+____
+
+<img src='pics/truehome.png' alt='home' height=450 width=450/>
+
+<img src='pics/startupcard.png' alt='home' height=450 width=450/>
+
+<img src='pics/investorforms.png' alt='home' height=450 width=450/>
+
+
+
 
 
 ## Features
