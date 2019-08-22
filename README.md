@@ -24,16 +24,18 @@ ____
 
 <img src='pics/startups.png' alt='home' height=450 width=450/>
 
-<img src='pics/investors.png' alt='home' height=450 width=450/>
+<img src='pics/Investors.png' alt='home' height=450 width=450/>
 
 <img src='pics/homepage.png' alt='home' height=450 width=450/>
+
+<img src='pics/members.png' alt='home' height=450 width=450/>
 
 
 
 ## ERD :
 ___
 
-<img src='pics/pic5.jpeg' alt='home' height=450 width=450/>
+<img src='pics/erd.png' alt='home' height=450 width=450/>
 
 
 ## Features
