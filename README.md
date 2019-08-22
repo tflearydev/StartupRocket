@@ -22,13 +22,12 @@ ___
 ## Wireframes :
 ____
 
-<img src='pics/startup.png' alt='home' height=450 width=450/>
+<img src='pics/startups.png' alt='home' height=450 width=450/>
 
-<img src='pics/Pic2.jpeg' alt='home' height=450 width=450/>
+<img src='pics/investors.png' alt='home' height=450 width=450/>
 
-<img src='pics/pic3.jpeg' alt='home' height=450 width=450/>
+<img src='pics/homepage.png' alt='home' height=450 width=450/>
 
-<img src='pics/pic4.jpeg' alt='home' height=450 width=450/>
 
 
 ## ERD :
