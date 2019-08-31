@@ -14,7 +14,7 @@ ____
 
 ## Live Deployed Project Link & User Stories
 ___
-[Heroku](https://startup-rocket.herokuapp.com/)
+<!-- [Heroku](https://startup-rocket.herokuapp.com/) -->
 
 [Trello](https://trello.com/b/pfS9qd7v/startuprocket)
 
