@@ -56,3 +56,4 @@ Investor.remove({})
   .then(() => Investor.create([yang, evans, cox]))
   .then(() =>  mongoose.connection.close())
   .catch(err => console.log(err, "error!"));
+  // need to reseed my data
