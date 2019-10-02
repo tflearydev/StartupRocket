@@ -5,10 +5,10 @@ Here is a quick pplication that allows startups that dont have normal access to 
 
 ## Technologies Used:
 ____
-* Visual Studio Code
+* VS Code
 * MongoDB, Expressjs, Node.js - Backend
 * Javascript, React.js - Frontend
-* Bootstrap, Styled-Components, CSS, Google Fonts (Styling) - Frontend Styling
+* Bootstrap, Styled-Components, CSS, Google Fonts (Styling) - Frontend UI Styling
 * axios - Api calls
 
 
